@@ -1,0 +1,9 @@
+app/user/
+app/ui/mock.js
+dist/
+build/Goyim Screener/
+build/ema_zone/
+__pycache__/
+*.pyc
+.env
+selftest.txt

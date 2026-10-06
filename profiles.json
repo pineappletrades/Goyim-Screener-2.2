@@ -1,0 +1,296 @@
+[
+  {
+    "id": "investing",
+    "name": "Investing 150/200 touch",
+    "enabled": true,
+    "ma_type": "EMA",
+    "fast": 150,
+    "slow": 200,
+    "universe": {
+      "source": "all",
+      "min_market_cap_b": 5
+    },
+    "rules": {
+      "min_price": {
+        "enabled": false
+      },
+      "min_volume": {
+        "enabled": false
+      },
+      "ma_stacked": {
+        "enabled": false
+      },
+      "slow_rising": {
+        "enabled": false
+      },
+      "pulled_back": {
+        "enabled": false
+      },
+      "in_zone": {
+        "enabled": false
+      },
+      "ma_touch": {
+        "enabled": true,
+        "params": {
+          "lines": "Both (separate alerts)",
+          "tolerance": 0.5,
+          "above_days": 15,
+          "hold": true,
+          "new_only": true,
+          "approach": 3
+        }
+      },
+      "reversal_today": {
+        "enabled": false
+      },
+      "market_regime": {
+        "enabled": false
+      },
+      "min_market_cap": {
+        "enabled": true,
+        "params": {
+          "min_b": 5
+        }
+      },
+      "fcf_positive": {
+        "enabled": true
+      },
+      "revenue_growth": {
+        "enabled": true,
+        "params": {
+          "min_pct": 0,
+          "quarters": 1
+        }
+      },
+      "eps_positive": {
+        "enabled": false
+      },
+      "eps_up_yoy": {
+        "enabled": true,
+        "params": {
+          "min_quarters": 1
+        }
+      },
+      "eps_up_seq": {
+        "enabled": false
+      },
+      "no_earnings_soon": {
+        "enabled": false
+      },
+      "max_pe": {
+        "enabled": false
+      }
+    },
+    "grader": {
+      "a_revenue": 20,
+      "a_needs_accel": true
+    },
+    "planner": {
+      "enabled": false,
+      "params": {
+        "risk_pct": 1.0,
+        "atr_buffer": 0.5
+      }
+    }
+  },
+  {
+    "id": "swing",
+    "name": "Swing 150/200",
+    "enabled": true,
+    "ma_type": "EMA",
+    "fast": 150,
+    "slow": 200,
+    "rules": {
+      "min_price": {
+        "enabled": true,
+        "params": {
+          "min": 10
+        }
+      },
+      "min_volume": {
+        "enabled": true,
+        "params": {
+          "min": 1000000
+        }
+      },
+      "ma_stacked": {
+        "enabled": true
+      },
+      "slow_rising": {
+        "enabled": true,
+        "params": {
+          "lookback": 20
+        }
+      },
+      "pulled_back": {
+        "enabled": true,
+        "params": {
+          "min_extension": 8,
+          "lookback": 60
+        }
+      },
+      "in_zone": {
+        "enabled": true,
+        "params": {
+          "above_fast": 2,
+          "below_slow": 2,
+          "approach": 6
+        }
+      },
+      "reversal_today": {
+        "enabled": false
+      },
+      "market_regime": {
+        "enabled": false
+      },
+      "min_market_cap": {
+        "enabled": true,
+        "params": {
+          "min_b": 0.5
+        }
+      },
+      "revenue_growth": {
+        "enabled": true,
+        "params": {
+          "min_pct": 10,
+          "quarters": 1
+        }
+      },
+      "eps_positive": {
+        "enabled": true
+      },
+      "eps_up_yoy": {
+        "enabled": true,
+        "params": {
+          "min_quarters": 1
+        }
+      },
+      "eps_up_seq": {
+        "enabled": false
+      },
+      "no_earnings_soon": {
+        "enabled": true,
+        "params": {
+          "min_days": 14
+        }
+      },
+      "max_pe": {
+        "enabled": false
+      }
+    },
+    "grader": {
+      "a_revenue": 20,
+      "a_needs_accel": true
+    },
+    "planner": {
+      "enabled": true,
+      "params": {
+        "risk_pct": 1.0,
+        "atr_buffer": 0.5
+      }
+    },
+    "universe": {
+      "source": "watchlist"
+    }
+  },
+  {
+    "id": "long_term",
+    "name": "Long-Term 150/200",
+    "enabled": true,
+    "ma_type": "EMA",
+    "fast": 150,
+    "slow": 200,
+    "rules": {
+      "min_price": {
+        "enabled": true,
+        "params": {
+          "min": 15
+        }
+      },
+      "min_volume": {
+        "enabled": true,
+        "params": {
+          "min": 500000
+        }
+      },
+      "ma_stacked": {
+        "enabled": true
+      },
+      "slow_rising": {
+        "enabled": true,
+        "params": {
+          "lookback": 20
+        }
+      },
+      "pulled_back": {
+        "enabled": true,
+        "params": {
+          "min_extension": 8,
+          "lookback": 60
+        }
+      },
+      "in_zone": {
+        "enabled": true,
+        "params": {
+          "above_fast": 2,
+          "below_slow": 2,
+          "approach": 6
+        }
+      },
+      "reversal_today": {
+        "enabled": false
+      },
+      "market_regime": {
+        "enabled": false
+      },
+      "min_market_cap": {
+        "enabled": true,
+        "params": {
+          "min_b": 2
+        }
+      },
+      "revenue_growth": {
+        "enabled": true,
+        "params": {
+          "min_pct": 10,
+          "quarters": 2
+        }
+      },
+      "eps_positive": {
+        "enabled": true
+      },
+      "eps_up_yoy": {
+        "enabled": true,
+        "params": {
+          "min_quarters": 3
+        }
+      },
+      "eps_up_seq": {
+        "enabled": true,
+        "params": {
+          "quarters": 2
+        }
+      },
+      "no_earnings_soon": {
+        "enabled": false
+      },
+      "max_pe": {
+        "enabled": false
+      }
+    },
+    "grader": {
+      "a_revenue": 20,
+      "a_needs_accel": true
+    },
+    "planner": {
+      "enabled": false,
+      "params": {
+        "risk_pct": 1.0,
+        "atr_buffer": 0.5
+      }
+    },
+    "universe": {
+      "source": "watchlist"
+    }
+  }
+]

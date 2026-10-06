@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goyim Screener</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <nav class="rail" aria-label="Main">
+    <div class="brand">
+      <img src="logo.png" alt="" width="34" height="34">
+      <span>Goyim Screener</span>
+    </div>
+    <button class="nav on" data-page="today">Today</button>
+    <button class="nav" data-page="charts">Charts</button>
+    <button class="nav" data-page="backtest">Backtest</button>
+    <button class="nav" data-page="finder">EMA Finder</button>
+    <button class="nav" data-page="gamma">Gamma</button>
+    <button class="nav" data-page="research">Research</button>
+    <button class="nav" data-page="compare">Compare</button>
+    <button class="nav" data-page="screener">Screener</button>
+    <button class="nav" data-page="rotation">Rotation</button>
+    <button class="nav" data-page="calendar">Calendar</button>
+    <button class="nav" data-page="alerts">Alerts</button>
+    <button class="nav" data-page="watchlist">Watchlist</button>
+    <button class="nav" data-page="strategies">Strategies</button>
+    <button class="nav" data-page="sources">Data sources</button>
+    <button class="nav" data-page="settings">Settings</button>
+    <div class="rail-foot">
+      <div id="autoText" class="muted small"></div>
+      <div id="version" class="muted small"></div>
+    </div>
+  </nav>
+
+  <div class="col">
+  <main>
+    <header class="top">
+      <div id="market" class="market"></div>
+      <form id="checkForm" class="check" autocomplete="off">
+        <span class="search-ic" id="searchIc"></span>
+        <input id="checkInput" placeholder="Search a ticker" aria-label="Ticker to check" maxlength="10">
+      </form>
+      <button id="themeBtn" class="icon-btn" aria-label="Switch light or dark mode" title="Switch light or dark mode"></button>
+      <div class="scanbox">
+        <div id="scanMeta" class="muted small"></div>
+        <button id="scanBtn" class="btn primary">Scan now</button>
+      </div>
+      <div id="progress" class="progress" hidden><div></div></div>
+    </header>
+
+    <section id="page-today" class="page">
+      <div id="todayBody"></div>
+    </section>
+
+    <section id="page-charts" class="page wide" hidden><div id="chartsBody"></div></section>
+    <section id="page-gamma" class="page wide" hidden><div id="gammaBody"></div></section>
+    <section id="page-finder" class="page wide" hidden><div id="finderBody"></div></section>
+    <section id="page-backtest" class="page wide" hidden><div id="backtestBody"></div></section>
+    <section id="page-research" class="page wide" hidden><div id="researchBody"></div></section>
+    <section id="page-compare" class="page wide" hidden><div id="compareBody"></div></section>
+    <section id="page-rotation" class="page wide" hidden><div id="rotationBody"></div></section>
+    <section id="page-screener" class="page wide" hidden><div id="screenerBody"></div></section>
+    <section id="page-calendar" class="page wide" hidden><div id="calendarBody"></div></section>
+    <section id="page-alerts" class="page wide" hidden><div id="alertsBody"></div></section>
+
+    <section id="page-watchlist" class="page" hidden>
+      <div class="page-head">
+        <h1>Watchlist</h1>
+        <p class="muted">Every scan checks these tickers against each strategy that's switched on.</p>
+      </div>
+      <form id="addTicker" class="row-form">
+        <input id="addTickerInput" placeholder="Add tickers, e.g. NVDA, AMD, CRWD" aria-label="Add tickers">
+        <button class="btn primary" type="submit">Add</button>
+      </form>
+      <div id="wlList" class="chips"></div>
+    </section>
+
+    <section id="page-strategies" class="page" hidden>
+      <div class="page-head">
+        <h1>Strategies</h1>
+        <p class="muted">Each strategy is its own set of moving averages and rules. A stock alerts when it passes every rule that's on.</p>
+      </div>
+      <div id="profileTabs" class="tabs"></div>
+      <div id="profileBody"></div>
+    </section>
+
+    <section id="page-sources" class="page" hidden>
+      <div class="page-head">
+        <h1>Data sources</h1>
+        <p class="muted">Where the numbers come from. Add an API by dropping a provider file into the providers folder, then reload.</p>
+      </div>
+      <div class="toolbar">
+        <button class="btn ghost" data-open="providers">Open providers folder</button>
+        <button class="btn ghost" data-open="rules">Open rules folder</button>
+        <button id="reloadPlugins" class="btn ghost">Reload files</button>
+      </div>
+      <div id="pluginErrors"></div>
+      <div id="providerList" class="providers"></div>
+    </section>
+
+    <section id="page-settings" class="page" hidden>
+      <div class="page-head"><h1>Settings</h1></div>
+      <div id="settingsBody" class="settings"></div>
+    </section>
+  </main>
+  <footer id="wbar" class="wbar" aria-label="Watchlist bar"></footer>
+  </div>
+</div>
+
+<div id="detail" class="detail" hidden role="dialog" aria-modal="true" aria-labelledby="dTitle">
+  <div class="detail-panel">
+    <div class="detail-head">
+      <div>
+        <h2 id="dTitle"></h2>
+        <div id="dSub" class="muted"></div>
+      </div>
+      <div class="detail-actions">
+        <select id="dProfile" aria-label="Strategy"></select>
+        <button id="dClose" class="btn ghost" aria-label="Close">Close</button>
+      </div>
+    </div>
+    <div id="dBody" class="detail-body"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script src="icons.js"></script>
+<script src="app.js"></script>
+<script src="pages.js"></script>
+</body>
+</html>

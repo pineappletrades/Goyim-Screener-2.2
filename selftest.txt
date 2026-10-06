@@ -1,0 +1,5 @@
+providers=['Public.com', 'Technicals (computed)', 'Finnhub', 'SEC EDGAR', 'Alpha Vantage', 'Market cap (computed)', 'Valuation history (computed)', 'Financial Datasets']
+rules=19
+errors=[]
+ui=/home/claude/ema-zone-app/app/ui
+ok=True

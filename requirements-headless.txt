@@ -1,0 +1,5 @@
+# Backup scan on GitHub Actions (no window, no pywebview)
+publicdotcom-py
+pandas>=2.0
+numpy
+requests>=2.28
